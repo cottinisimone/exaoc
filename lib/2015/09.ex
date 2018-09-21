@@ -52,10 +52,3 @@ defmodule Permutations do
   def of([]), do: [[]]
   def of(list), do: for elem <- list, rest <- of(list--[elem]), do: [elem|rest]
 end
-
-defmodule Factorial do
-  def of(0), do: 1
-  def of(n) when n > 0 do
-    n * of(n - 1)
-  end
-end
