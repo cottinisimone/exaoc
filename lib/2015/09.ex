@@ -9,6 +9,12 @@ defmodule AdventOfCode.Level09Part1 do
   def start do
     puzzle_input("2015", "09")
     |> String.split("\n")
+    |> calculate()
+    |> Enum.min()
+  end
+
+  def calculate(input) do
+    input
     |> Enum.map(&String.split(&1, " "))
     # Filtering out "to" and "=". Useless
     |> Enum.map(fn road -> Enum.filter(road, &(&1 != "to" && &1 != "=")) end)
@@ -18,26 +24,34 @@ defmodule AdventOfCode.Level09Part1 do
     |> connections()
   end
 
-  def zip_with_set(roads), do: {roads, unique(MapSet.new(), roads)}
-
-  defp unique(set, [[dep, arr, _] | roads]), do: set |> MapSet.put(dep) |> MapSet.put(arr) |> unique(roads)
+  defp zip_with_set(roads), do: {roads, unique(MapSet.new(), roads)}
 
   defp unique(set, []), do: set
 
+  defp unique(set, [[dep, arr, _] | roads]),
+    do: set |> MapSet.put(dep) |> MapSet.put(arr) |> unique(roads)
+
   defp connections({roads, cities}) do
-    cities 
-    |> MapSet.to_list() 
+    cities
+    |> MapSet.to_list()
     |> Permutations.of()
     |> Enum.map(fn perms ->
       perms
-      |> Enum.chunk_every(2, 1) 
-      |> Enum.map(&(get_distance(roads, &1)))
+      |> Enum.chunk_every(2, 1)
+      # Removing last element (chunk leaves last element as single..)
+      |> Enum.drop(-1)
+      |> Enum.map(&get_distance(roads, &1))
     end)
-    #|> Enum.filter(&(!Enum.member?(&1, nil)))
+    |> Enum.filter(&(!Enum.member?(&1, nil)))
+    |> Enum.map(&Enum.sum(&1))
   end
 
-  defp get_distance([[dep, arr, dist] | _], [from, to]) when dep == from and arr == to, do: dist
-  defp get_distance([[_, _, _] | roads], trip), do: get_distance(roads, trip)
+  defp get_distance([[dep, arr, dist] | roads], [from, to]) do
+    if (dep == from && arr == to) || (dep == to && arr == from),
+      do: dist,
+      else: get_distance(roads, [from, to])
+  end
+
   defp get_distance([], _), do: nil
 end
 
@@ -45,10 +59,17 @@ end
 # iex> AdventOfCode.Level09Part2.start
 # iex> 804
 defmodule AdventOfCode.Level09Part2 do
-  def start, do: puzzle_input("2015", "09")
+  import AdventOfCode.Level09Part1, only: [calculate: 1]
+
+  def start do
+    puzzle_input("2015", "09")
+    |> String.split("\n")
+    |> calculate()
+    |> Enum.max()
+  end
 end
 
 defmodule Permutations do
   def of([]), do: [[]]
-  def of(list), do: for elem <- list, rest <- of(list--[elem]), do: [elem|rest]
+  def of(list), do: for(elem <- list, rest <- of(list -- [elem]), do: [elem | rest])
 end
