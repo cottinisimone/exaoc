@@ -45,8 +45,7 @@ end
 # iex> 53
 defmodule AdventOfCode.Level05Part2 do
   def start,
-    do:
-      puzzle_input("2015", "05") |> String.split("\n") |> Enum.filter(&is_nice/1) |> Enum.count()
+    do: puzzle_input("2015", "05") |> String.split("\n") |> Enum.filter(&is_nice/1) |> Enum.count()
 
   def is_nice(str) do
     has_couple_twice?(String.codepoints(str)) && has_palindrome?(String.to_charlist(str))
