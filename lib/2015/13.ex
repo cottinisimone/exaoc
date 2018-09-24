@@ -39,12 +39,12 @@ defmodule AdventOfCode.Level13Part1 do
     Enum.flat_map(array, fn [sub, who] -> get_points(commands, sub, who) end)
   end
 
-  defp get_points(commands, sub1, sub2) do 
-    commands 
-    |> Enum.filter(fn {subject, _, _, neighbor} -> 
+  defp get_points(commands, sub1, sub2) do
+    commands
+    |> Enum.filter(fn {subject, _, _, neighbor} ->
       (subject == sub1 && neighbor == sub2) || (subject == sub2 && neighbor == sub1)
-    end) 
-    |> Enum.map(fn {_, sign, points, _} -> if sign == ?+, do: points, else: (points * -1) end)
+    end)
+    |> Enum.map(fn {_, sign, points, _} -> if sign == ?+, do: points, else: points * -1 end)
   end
 end
 
@@ -62,7 +62,6 @@ defmodule AdventOfCode.Level13Part2 do
     |> Enum.uniq()
     |> Enum.reduce(commands, fn who, cmds -> [{"Me", ?+, 0, who} | cmds] end)
   end
-
 end
 
 defmodule Chunk do
