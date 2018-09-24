@@ -36,13 +36,8 @@ defmodule AdventOfCode.Level10Part2 do
   end
 end
 
-
 # 1
 # 11
 # 21
 # 1211
 # 111221
-
-
-
-
