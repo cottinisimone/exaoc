@@ -23,7 +23,7 @@ defmodule AdventOfCode.Level15Part1 do
   end
 
   defp _to_ingredient([name, "capacity", cap, "durability", d, "flavor", f, "texture", t, "calories", cal]) do
-    %{
+    %Ingredient{
       name: name,
       capacity: String.to_integer(cap),
       durability: String.to_integer(d),
