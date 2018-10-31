@@ -1,11 +1,11 @@
 import AdventOfCode, only: [puzzle_input: 2]
 # Year 2015, Level 9
-# iex -S mix  
 
-# Part 1
-# iex> AdventOfCode.Level09Part1.start
-# iex> 207
 defmodule AdventOfCode.Level09Part1 do
+  @doc """
+  iex> AdventOfCode.Level09Part1.start
+  207
+  """
   def start do
     puzzle_input("2015", "09")
     |> String.split("\n")
@@ -55,12 +55,13 @@ defmodule AdventOfCode.Level09Part1 do
   defp get_distance([], _), do: nil
 end
 
-# Part 2
-# iex> AdventOfCode.Level09Part2.start
-# iex> 804
 defmodule AdventOfCode.Level09Part2 do
   import AdventOfCode.Level09Part1, only: [calculate: 1]
 
+  @doc """
+  iex> AdventOfCode.Level09Part2.start
+  804
+  """
   def start do
     puzzle_input("2015", "09")
     |> String.split("\n")

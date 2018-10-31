@@ -1,15 +1,15 @@
 import AdventOfCode, only: [puzzle_input: 2]
 # Year 2015, Level 15
-# iex -S mix  
 
 defmodule Ingredient do
   defstruct name: "", capacity: 0, durability: 0, flavor: 0, texture: 0, calories: 0
 end
 
-# Part 1
-# iex> AdventOfCode.Level15Part1.start
-# iex> 18965440
 defmodule AdventOfCode.Level15Part1 do
+  @doc """
+  iex> AdventOfCode.Level15Part1.start
+  18965440
+  """
   def start do
     puzzle_input("2015", "15") |> get_ingredients() |> mix(&calculate/1) |> Enum.max()
   end
@@ -50,12 +50,13 @@ defmodule AdventOfCode.Level15Part1 do
   end
 end
 
-# Part 2
-# iex> AdventOfCode.Level15Part2.start
-# iex> 15862900
 defmodule AdventOfCode.Level15Part2 do
   import AdventOfCode.Level15Part1, only: [get_ingredients: 1, mix: 2, calculate: 1]
 
+  @doc """
+  iex> AdventOfCode.Level15Part2.start
+  15862900
+  """
   def start do
     puzzle_input("2015", "15") |> get_ingredients() |> mix(&_count_calories/1) |> Enum.max()
   end

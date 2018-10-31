@@ -1,14 +1,10 @@
 import AdventOfCode, only: [puzzle_input: 2]
 # Year 2015, Level 16
-# iex -S mix  
 
 defmodule Sue do
   defstruct number: 0, evidences: MapSet.new()
 end
 
-# Part 1
-# iex> AdventOfCode.Level16Part1.start
-# iex> 213
 defmodule AdventOfCode.Level16Part1 do
   @evidences [
     {"children", 3},
@@ -23,6 +19,10 @@ defmodule AdventOfCode.Level16Part1 do
     {"perfumes", 1}
   ]
 
+  @doc """
+  iex> AdventOfCode.Level16Part1.start
+  213
+  """
   def start do
     puzzle_input("2015", "16")
     |> parse()
@@ -57,12 +57,13 @@ defmodule AdventOfCode.Level16Part1 do
   end
 end
 
-# Part 2
-# iex> AdventOfCode.Level16Part2.start
-# iex> 323
 defmodule AdventOfCode.Level16Part2 do
   import AdventOfCode.Level16Part1, only: [parse: 1, to_sue: 1]
 
+  @doc """
+  iex> AdventOfCode.Level16Part2.start
+  323
+  """
   def start do
     puzzle_input("2015", "16")
     |> parse()

@@ -1,11 +1,11 @@
 import AdventOfCode, only: [puzzle_input: 2]
 # Year 2015, Level 3
-# iex -S mix  
 
-# Part 1
-# iex> AdventOfCode.Level03Part1.start
-# iex> 2565
 defmodule AdventOfCode.Level03Part1 do
+  @doc """
+  iex> AdventOfCode.Level03Part1.start
+  2565
+  """
   def start do
     puzzle_input("2015", "03")
     |> String.to_charlist()
@@ -20,12 +20,13 @@ defmodule AdventOfCode.Level03Part1 do
   def take_step(?<, {x, y}), do: {x - 1, y}
 end
 
-# Part 2
-# iex> AdventOfCode.Level03Part2.start
-# iex> 2639
 defmodule AdventOfCode.Level03Part2 do
   import AdventOfCode.Level03Part1, only: [take_step: 2]
 
+  @doc """
+  iex> AdventOfCode.Level03Part2.start
+  2639
+  """
   def start do
     puzzle_input("2015", "03")
     |> String.to_charlist()

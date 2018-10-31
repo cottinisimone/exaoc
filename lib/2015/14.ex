@@ -1,15 +1,15 @@
 import AdventOfCode, only: [puzzle_input: 2]
 # Year 2015, Level 14
-# iex -S mix  
 
 defmodule Reindeer do
   defstruct name: "", speed: 0, sprint: 0, rest: 0, distance: 0, points: 0
 end
 
-# Part 1
-# iex> AdventOfCode.Level14Part1.start
-# iex> 2640
 defmodule AdventOfCode.Level14Part1 do
+  @doc """
+  iex> AdventOfCode.Level14Part1.start
+  2640
+  """
   def start do
     puzzle_input("2015", "14")
     |> String.split("\n")
@@ -47,12 +47,13 @@ defmodule AdventOfCode.Level14Part1 do
   defp as_int(str), do: String.to_integer(str)
 end
 
-# Part 2
-# iex> AdventOfCode.Level14Part2.start
-# iex> 1102
 defmodule AdventOfCode.Level14Part2 do
   import AdventOfCode.Level14Part1, only: [to_reindeer: 1, fly_or_rest: 2]
 
+  @doc """
+  iex> AdventOfCode.Level14Part2.start
+  1102
+  """
   def start do
     puzzle_input("2015", "14")
     |> String.split("\n")

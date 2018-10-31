@@ -1,11 +1,11 @@
 import AdventOfCode, only: [puzzle_input: 2]
 # Year 2015, Level 13
-# iex -S mix  
 
-# Part 1
-# iex> AdventOfCode.Level13Part1.start
-# iex> 709
 defmodule AdventOfCode.Level13Part1 do
+  @doc """
+  iex> AdventOfCode.Level13Part1.start
+  709
+  """
   def start, do: puzzle_input("2015", "13") |> to_command() |> logic()
 
   def to_command(input) do
@@ -48,13 +48,15 @@ defmodule AdventOfCode.Level13Part1 do
   end
 end
 
-# Part 2
-# iex> AdventOfCode.Level13Part2.start
-# iex> 668
 defmodule AdventOfCode.Level13Part2 do
   import AdventOfCode.Level13Part1, only: [to_command: 1, logic: 1]
 
-  # After "Me" it's a bit slow..
+  @doc """
+  After "Me" it's a bit slow..
+
+  iex> AdventOfCode.Level13Part2.start
+  668
+  """
   def start, do: puzzle_input("2015", "13") |> to_command() |> add_myself() |> logic()
 
   def add_myself(commands) do

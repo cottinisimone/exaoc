@@ -1,11 +1,11 @@
 import AdventOfCode, only: [puzzle_input: 2]
 # Year 2015, Level 5
-# iex -S mix  
 
-# Part 1
-# iex> AdventOfCode.Level05Part1.start
-# iex> 258
 defmodule AdventOfCode.Level05Part1 do
+  @doc """
+  iex> AdventOfCode.Level05Part1.start
+  258
+  """
   def start, do: puzzle_input("2015", "05") |> String.split("\n") |> count_nice()
 
   def count_nice(rows), do: Enum.filter(rows, &is_nice?/1) |> Enum.count()
@@ -40,10 +40,11 @@ defmodule AdventOfCode.Level05Part1 do
   end
 end
 
-# Part 2
-# iex> AdventOfCode.Level05Part2.start
-# iex> 53
 defmodule AdventOfCode.Level05Part2 do
+  @doc """
+  iex> AdventOfCode.Level05Part2.start
+  53
+  """
   def start,
     do: puzzle_input("2015", "05") |> String.split("\n") |> Enum.filter(&is_nice/1) |> Enum.count()
 

@@ -1,11 +1,11 @@
 import AdventOfCode, only: [puzzle_input: 2]
 # Year 2015, Level 10
-# iex -S mix  
 
-# Part 1
-# iex> AdventOfCode.Level10Part1.start
-# iex> 329356
 defmodule AdventOfCode.Level10Part1 do
+  @doc """
+  iex> AdventOfCode.Level10Part1.start
+  329356
+  """
   def start do
     puzzle_input("2015", "10")
     |> String.codepoints()
@@ -22,12 +22,13 @@ defmodule AdventOfCode.Level10Part1 do
   defp _say([], acc, last, n), do: Enum.reverse([last | [n | acc]])
 end
 
-# Part 2
-# iex> AdventOfCode.Level10Part2.start
-# iex> 4666278
 defmodule AdventOfCode.Level10Part2 do
   import AdventOfCode.Level10Part1, only: [look_and_say: 2]
 
+  @doc """
+  iex> AdventOfCode.Level10Part2.start
+  4666278
+  """
   def start do
     puzzle_input("2015", "10")
     |> String.codepoints()
@@ -35,9 +36,3 @@ defmodule AdventOfCode.Level10Part2 do
     |> look_and_say(50)
   end
 end
-
-# 1
-# 11
-# 21
-# 1211
-# 111221

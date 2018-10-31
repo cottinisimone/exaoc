@@ -1,12 +1,12 @@
 import AdventOfCode, only: [puzzle_input: 2]
 use Bitwise, only_operators: true
 # Year 2015, Level 7
-# iex -S mix  
 
-# Part 1
-# iex> AdventOfCode.Level07Part1.start
-# iex> 3176
 defmodule AdventOfCode.Level07Part1 do
+  @doc """
+  iex> AdventOfCode.Level07Part1.start
+  3176
+  """
   def start do
     puzzle_input("2015", "07")
     |> String.split("\n")
@@ -79,12 +79,13 @@ defmodule AdventOfCode.Level07Part1 do
   end
 end
 
-# Part 2
-# iex> AdventOfCode.Level07Part2.start
-# iex> 14710
 defmodule AdventOfCode.Level07Part2 do
   import AdventOfCode.Level07Part1, only: [circuit: 3]
 
+  @doc """
+  iex> AdventOfCode.Level07Part2.start
+  14710
+  """
   def start do
     puzzle_input("2015", "07")
     |> String.split("\n")

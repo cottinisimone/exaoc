@@ -1,11 +1,11 @@
 import AdventOfCode, only: [puzzle_input: 2]
 # Year 2015, Level 17
-# iex -S mix  
 
-# Part 1
-# iex> AdventOfCode.Level17Part1.start
-# iex> 654
 defmodule AdventOfCode.Level17Part1 do
+  @doc """
+  iex> AdventOfCode.Level17Part1.start
+  654
+  """
   def start do
     puzzle_input("2015", "17")
     |> parse()
@@ -18,12 +18,13 @@ defmodule AdventOfCode.Level17Part1 do
   def combinations(containers), do: Combinations.of(containers)
 end
 
-# Part 2
-# iex> AdventOfCode.Level17Part2.start
-# iex> 57
 defmodule AdventOfCode.Level17Part2 do
   import AdventOfCode.Level17Part1, only: [parse: 1]
 
+  @doc """
+  iex> AdventOfCode.Level17Part2.start
+  57
+  """
   def start do
     puzzle_input("2015", "17")
     |> parse()

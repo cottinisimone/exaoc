@@ -1,14 +1,13 @@
 import AdventOfCode, only: [puzzle_input: 2]
 # Year 2015, Level 6
-# iex -S mix  
-
-# Part 1
-# iex> AdventOfCode.Level06Part1.start
-# iex> 543903
 
 defmodule AdventOfCode.Level06Part1 do
   @regex ~r/(toggle|turn off|turn on)\s+([0-9]{1,}),([0-9]{1,})\s+through\s+([0-9]{1,}),([0-9]{1,})/
 
+  @doc """
+  iex> AdventOfCode.Level06Part1.start
+  543903
+  """
   def start do
     puzzle_input("2015", "06")
     |> String.split("\n")
@@ -64,12 +63,13 @@ defmodule AdventOfCode.Level06Part1 do
   def int(v), do: String.to_integer(v)
 end
 
-# Part 2
-# iex> AdventOfCode.Level06Part2.start
-# iex> 14687245
 defmodule AdventOfCode.Level06Part2 do
   @regex ~r/(toggle|turn off|turn on)\s+([0-9]{1,}),([0-9]{1,})\s+through\s+([0-9]{1,}),([0-9]{1,})/
 
+  @doc """
+  iex> AdventOfCode.Level06Part2.start
+  14687245
+  """
   def start do
     puzzle_input("2015", "06")
     |> String.split("\n")

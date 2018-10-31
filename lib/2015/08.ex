@@ -1,11 +1,11 @@
 import AdventOfCode, only: [puzzle_input: 2]
 # Year 2015, Level 8
-# iex -S mix
 
-# Part 1
-# iex> AdventOfCode.Level08Part1.start
-# iex> 1350
 defmodule AdventOfCode.Level08Part1 do
+  @doc """
+  iex> AdventOfCode.Level08Part1.start
+  1350
+  """
   def start do
     puzzle_input("2015", "08")
     |> String.split("\n")
@@ -26,10 +26,11 @@ defmodule AdventOfCode.Level08Part1 do
   end
 end
 
-# Part 2
-# iex> AdventOfCode.Level08Part2.start
-# iex> 2085
 defmodule AdventOfCode.Level08Part2 do
+  @doc """
+  iex> AdventOfCode.Level08Part2.start
+  2085
+  """
   def start do
     puzzle_input("2015", "08")
     |> String.split("\n")

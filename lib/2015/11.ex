@@ -1,11 +1,11 @@
 import AdventOfCode, only: [puzzle_input: 2]
 # Year 2015, Level 11
-# iex -S mix  
 
-# Part 1
-# iex> AdventOfCode.Level11Part1.start
-# iex> cqjxxyzz
 defmodule AdventOfCode.Level11Part1 do
+  @doc """
+  iex> AdventOfCode.Level11Part1.start
+  "cqjxxyzz"
+  """
   def start, do: puzzle_input("2015", "11") |> find()
 
   def find(input) do
@@ -42,11 +42,12 @@ defmodule AdventOfCode.Level11Part1 do
   defp _has_n_doubles([], _, _, _), do: false
 end
 
-# Part 2
-# iex> AdventOfCode.Level11Part2.start
-# iex> cqkaabcc
 defmodule AdventOfCode.Level11Part2 do
   import AdventOfCode.Level11Part1, only: [find: 1]
 
+  @doc """
+  iex> AdventOfCode.Level11Part2.start
+  "cqkaabcc"
+  """
   def start, do: puzzle_input("2015", "11") |> find() |> find()
 end

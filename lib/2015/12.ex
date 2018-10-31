@@ -1,11 +1,11 @@
 import AdventOfCode, only: [puzzle_input: 2]
 # Year 2015, Level 12
-# iex -S mix  
 
-# Part 1
-# iex> AdventOfCode.Level12Part1.start
-# iex> 111754
 defmodule AdventOfCode.Level12Part1 do
+  @doc """
+  iex> AdventOfCode.Level12Part1.start
+  111754
+  """
   def start, do: puzzle_input("2015", "12") |> String.to_charlist() |> collect() |> Enum.sum()
 
   def collect(arr), do: _collect(arr, [], [])
@@ -18,10 +18,11 @@ defmodule AdventOfCode.Level12Part1 do
   defp to_integer(num), do: num |> Enum.reverse() |> to_string() |> String.to_integer()
 end
 
-# Part 2
-# iex> AdventOfCode.Level12Part2.start
-# iex> 65402
 defmodule AdventOfCode.Level12Part2 do
+  @doc """
+  iex> AdventOfCode.Level12Part2.start
+  65402
+  """
   def start, do: puzzle_input("2015", "12") |> Poison.Parser.parse!(%{}) |> sum()
 
   def sum(some), do: _sum(some, 0)
