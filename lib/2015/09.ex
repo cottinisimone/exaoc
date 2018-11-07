@@ -69,8 +69,3 @@ defmodule AdventOfCode.Level09Part2 do
     |> Enum.max()
   end
 end
-
-defmodule Permutations do
-  def of([]), do: [[]]
-  def of(list), do: for(elem <- list, rest <- of(list -- [elem]), do: [elem | rest])
-end
