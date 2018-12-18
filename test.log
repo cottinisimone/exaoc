@@ -1,0 +1,61 @@
+Compiling 1 file (.ex)
+{"Al", "ThF", 1, 506, 505}
+{"Al", "ThRnFAr", 1, 510, 505}
+{"B", "BCa", 22, 11154, 505}
+{"B", "TiB", 22, 11154, 505}
+{"B", "TiRnFAr", 22, 11242, 505}
+{"Ca", "CaCa", 52, 26364, 505}
+{"Ca", "PB", 52, 26260, 505}
+{"Ca", "PRnFAr", 52, 26468, 505}
+{"Ca", "SiRnFYFAr", 52, 26624, 505}
+{"Ca", "SiRnMgAr", 52, 26572, 505}
+{"Ca", "SiTh", 52, 26364, 505}
+{"F", "CaF", 32, 16224, 505}
+{"F", "PMg", 32, 16224, 505}
+{"F", "SiAl", 32, 16256, 505}
+{"H", "CRnAlAr", 1, 505, 505}
+{"H", "CRnFYFYFAr", 1, 505, 505}
+{"H", "CRnFYMgAr", 1, 505, 505}
+{"H", "CRnMgYFAr", 1, 505, 505}
+{"H", "HCa", 1, 505, 505}
+{"H", "NRnFYFAr", 1, 505, 505}
+{"H", "NRnMgAr", 1, 505, 505}
+{"H", "NTh", 1, 505, 505}
+{"H", "OB", 1, 505, 505}
+{"H", "ORnFAr", 1, 505, 505}
+{"Mg", "BF", 8, 4040, 505}
+{"Mg", "TiMg", 8, 4056, 505}
+{"N", "CRnFAr", 1, 505, 505}
+{"N", "HSi", 1, 505, 505}
+{"O", "CRnFYFAr", 1, 505, 505}
+{"O", "CRnMgAr", 1, 505, 505}
+{"O", "HP", 1, 505, 505}
+{"O", "NRnFAr", 1, 505, 505}
+{"O", "OTi", 1, 505, 505}
+{"P", "CaP", 23, 11661, 505}
+{"P", "PTi", 23, 11661, 505}
+{"P", "SiRnFAr", 23, 11753, 505}
+{"Si", "CaSi", 42, 21294, 505}
+{"Th", "ThCa", 19, 9633, 505}
+{"Ti", "BP", 20, 10100, 505}
+{"Ti", "TiTi", 20, 10140, 505}
+{"e", "HF", 1, 505, 505}
+{"e", "NAl", 1, 505, 505}
+{"e", "OMg", 1, 505, 505}
+
+
+  1) doctest AdventOfCode.Level19Part1.start/0 (1) (AdventOfCode.Level19Test)
+     test/2015/19_test.exs:4
+     Doctest failed
+     code:  AdventOfCode.Level19Part1.start === 535
+     left:  536
+     right: 535
+     stacktrace:
+       lib/2015/19.ex:6: AdventOfCode.Level19Part1 (module)
+
+
+
+Finished in 0.2 seconds
+1 doctest, 1 failure
+
+Randomized with seed 871891
